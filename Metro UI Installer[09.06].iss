@@ -43,9 +43,9 @@
 #endif
 
 #define Font1 "AttackGraffiti.ttf"
-#define Font1Name "AttackGraffiti"
+#define Font1Name "Attack Graffiti"
 #define Font2 "mexcellent.ttf"
-#define Font2Name "mexcellent"
+#define Font2Name "Mexcellent 3D"
 #define MyIconFile "GTAVICE.ico"
 #define srep
 
@@ -74,6 +74,7 @@ DisableWelcomePage=True
 ExtraDiskSpaceRequired={#DoCalculationExternal(NeedSize + '*1024*1024')}
 InternalCompressLevel=ultra64
 OutputBaseFilename=GTA ViceCity
+///Warning НЕ ИСПОЛЬЗУЙТЕ АБСОЛЮТНЫЕ ПУТИ
 //SetupIconFile=F:\Для Репаков\Проги\RePack material\Work\Files\MyIconFile\GTAVICE.ico
 ShowLanguageDialog=True
 SolidCompression=False
@@ -92,8 +93,7 @@ Source: "Files\txt\infoRU.txt"; Flags: dontcopy ; Languages: "russian"
 Source: "Files\txt\longinfoRU.txt"; Flags: dontcopy ; Languages: "russian"
 Source: "Files\txt\infoEN.txt"; Flags: dontcopy ; Languages: "english"
 Source: "Files\txt\longinfoEN.txt"; Flags: dontcopy ; Languages: "english"
-Source: "Files\Font\AttackGraffiti.ttf"; Flags: dontcopy
-Source: "Files\Font\mexcellent.ttf"; Flags: dontcopy
+Source: "Files\Font\*"; Flags: dontcopy
 Source: "Files\Images\Cursor\Cur.ani"; DestDir: "{tmp}"; Flags: dontcopy;
 #ifdef Music
   Source: "Files\music\*"; Flags: dontcopy 
@@ -352,11 +352,11 @@ end;
 
 function InitializeSetup: Boolean;
 begin
-  FMXInnoInit;
   ExtractTemporaryFile('{#Font1}');
   ExtractTemporaryFile('{#Font2}');
   AddFontResource2(ExpandConstant('{tmp}\{#Font1}'));
   AddFontResource2(ExpandConstant('{tmp}\{#Font2}'));
+  FMXInnoInit;
   Result:= True;
 end;
 
