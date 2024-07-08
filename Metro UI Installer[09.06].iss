@@ -74,8 +74,7 @@ DisableWelcomePage=True
 ExtraDiskSpaceRequired={#DoCalculationExternal(NeedSize + '*1024*1024')}
 InternalCompressLevel=ultra64
 OutputBaseFilename=GTA ViceCity
-///Warning НЕ ИСПОЛЬЗУЙТЕ АБСОЛЮТНЫЕ ПУТИ
-//SetupIconFile=F:\Для Репаков\Проги\RePack material\Work\Files\MyIconFile\GTAVICE.ico
+SetupIconFile=Files\MyIconFile\GTAVICE.ico
 ShowLanguageDialog=True
 SolidCompression=False
 UninstallDisplayIcon={app}\{#GameExe1File}
